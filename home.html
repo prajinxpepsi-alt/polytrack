@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Awesome Game</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      padding-top: 100px;
+    }
+    button {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      // Check if access was granted
+      if (sessionStorage.getItem("access_granted") !== "true") {
+        alert("You must enter the password first.");
+        window.location.href = "lock.html";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Welcome to My Awesome Game</h1>
+  <p>Press Play to begin!</p>
+  <a href="index.html"
+
+  <script>
+    function startGame() {
+      alert("Game would start here!");
+      // Add your actual game start logic here
+    }
+  </script>
+</body>
+</html>
