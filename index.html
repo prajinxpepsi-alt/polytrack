@@ -31,7 +31,7 @@
 
       if (userPassword === correctPassword) {
         sessionStorage.setItem("access_granted", "true");
-        alert("Access granted! Now go to game.html.");
+        window.location.href = "game.html"; // Redirects to the game page
       } else {
         alert("Incorrect password.");
       }
