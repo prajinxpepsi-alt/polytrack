@@ -2,40 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Awesome Game</title>
+  <title>Password Required</title>
   <style>
     body {
       text-align: center;
       font-family: Arial, sans-serif;
-      background: #111;
+      background: #222;
       color: white;
       padding-top: 100px;
     }
-    button {
-      padding: 20px 40px;
-      font-size: 1.5em;
-      cursor: pointer;
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
     }
   </style>
-  <script>
-    window.onload = function() {
-      // Check if access was granted
-      if (sessionStorage.getItem("access_granted") !== "true") {
-        alert("You must enter the password first.");
-        window.location.href = "lock.html";
-      }
-    };
-  </script>
 </head>
 <body>
-  <h1>Welcome to My Awesome Game</h1>
-  <p>Press Play to begin!</p>
-  <a href="index.html"
+  <h1>Enter Password to Play</h1>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <br>
+  <button onclick="checkPassword()">Submit</button>
 
   <script>
-    function startGame() {
-      alert("Game would start here!");
-      // Add your actual game start logic here
+    function checkPassword() {
+      const correctPassword = "secret123"; // Change this to your desired password
+      const userPassword = document.getElementById("passwordInput").value;
+
+      if (userPassword === correctPassword) {
+        sessionStorage.setItem("access_granted", "true");
+        alert("Access granted! Now go to game.html.");
+      } else {
+        alert("Incorrect password.");
+      }
     }
   </script>
 </body>
